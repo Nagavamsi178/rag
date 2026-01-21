@@ -11,6 +11,8 @@ env/
 venv/
 .venv/
 ENV/
+*.ram
+ram/
 pip-wheel-metadata/
 
 # =========================

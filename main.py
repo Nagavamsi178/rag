@@ -161,14 +161,37 @@ if selected_pdf:
         embeddings,
         store_path=store_path,
     )
+    from langchain.retrievers import BM25Retriever,EnsembleRetriever
+
+    bm25 = BM25Retriever.from_documents(chunks)
+    bm25.k = 6
 
     retriever = db.as_retriever(
-        search_type="mmr",
+        search_type="mmr" ,
         search_kwargs={"k": 6, "fetch_k": 30, "lambda_mult": 0.75,},
     )
+    
+    def is_short_query(query: str) -> bool:
+        return len(query.split()) <= 2
 
-    rag_chain = build_rag_chain(retriever)
 
+    def get_retriever(query: str):
+        if is_short_query(query):
+            return EnsembleRetriever(
+            retrievers=[bm25, retriever],
+            weights=[0.6, 0.4],  # BM25 dominates
+        )
+        else:
+            return EnsembleRetriever(
+                retrievers=[bm25, retriever],
+                weights=[0.3, 0.7],  # Vector dominates
+            )
+    query = ""
+    hybrid_retriever = get_retriever(query)
+    chunks = hybrid_retriever.get_relevant_documents(query)
+
+
+    rag_chain = build_rag_chain(hybrid_retriever)
     with st.form("qa_form"):
         query = st.text_input("Ask a question")
         submitted = st.form_submit_button("Ask")

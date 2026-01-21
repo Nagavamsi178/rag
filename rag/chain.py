@@ -23,6 +23,7 @@ def build_rag_chain(_retriever):
     You are an intelligent and helpful AI assistant.
 
     Your role depends on the content of the uploaded document:
+    - if the query is about a single word or short phrase, build and retrieve answer using both vector and bm25
     - If the document is legal, act as a legal assistant.
     - If it is technical, act as a technical assistant.
     - If it is academic, act as a research assistant.
