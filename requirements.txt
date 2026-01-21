@@ -1,0 +1,24 @@
+# Python dependencies
+streamlit
+python-dotenv
+PyPDF2
+
+# LangChain (stable 0.2.x stack)
+langchain==0.2.14
+langchain-core==0.2.34
+langchain-community==0.2.12
+langchain-openai==0.1.22
+langchain-text-splitters==0.2.2
+
+# Embeddings
+sentence-transformers==2.2.2
+transformers==4.30.2
+tokenizers==0.13.3
+
+# Vector DB
+faiss-cpu
+
+# Auth & security
+passlib[bcrypt]==1.7.4
+bcrypt<4.0
+pydantic==1.10.13

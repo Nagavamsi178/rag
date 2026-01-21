@@ -1,0 +1,83 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+pip-wheel-metadata/
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+
+# =========================
+# Databases
+# =========================
+*.db
+*.sqlite3
+
+# =========================
+# Streamlit
+# =========================
+.streamlit/
+
+# =========================
+# Logs & cache
+# =========================
+*.log
+.cache/
+.cache/*
+.cache/**
+
+# =========================
+# FAISS Vector Stores (IMPORTANT)
+# =========================
+vectorstores/
+vectorstores/**
+
+# =========================
+# User uploaded files (PDFs)
+# =========================
+data/
+data/**
+uploads/
+uploads/**
+
+# =========================
+# OS specific
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Docker
+# =========================
+*.pid
+
+# =========================
+# IDEs & Editors
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Jupyter / notebooks
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Build / dist
+# =========================
+build/
+dist/
+*.egg-info/
