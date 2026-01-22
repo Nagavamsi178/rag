@@ -105,4 +105,4 @@ uuid_utils==0.13.0
 watchdog==6.0.0
 yarl==1.22.0
 zstandard==0.25.0
-bm25==0.3.5
+bm25==0.0.1
