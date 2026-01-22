@@ -65,6 +65,7 @@ pydantic>=2.7.4,<3
 pydeck==0.9.1
 pypdf==6.6.0
 PyPDF2==3.0.1
+python-3.11.9
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.1
 pytz==2025.2
@@ -88,7 +89,7 @@ sympy==1.14.0
 tenacity==8.5.0
 threadpoolctl==3.6.0
 tiktoken==0.12.0
-tokenizers==0.13.3
+tokenizers>=0.15,<0.20
 toml==0.10.2
 torch==2.9.1
 torchvision==0.24.1
@@ -105,4 +106,5 @@ watchdog==6.0.0
 yarl==1.22.0
 zstandard==0.25.0
 rank-bm25==0.2.2
+
 
